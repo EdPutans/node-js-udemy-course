@@ -5,6 +5,6 @@ module.exports.addNote = () => {
     return 'newNote'
 }
 
-module.exports.add =(a,b) => {
- return a + b
-}
+// module.exports.add =(a,b) => {
+//  return a + b
+// }
