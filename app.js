@@ -38,8 +38,7 @@ command = argv._[0]
 
 switch(command){
     case "add":
-        const note = notes.addNote(argv.title, argv.body)
-    
+        notes.addNote(argv.title, argv.body)
         break
     case "list":
         notes.getAll()
