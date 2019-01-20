@@ -3,6 +3,8 @@ console.log('starting app.js...')
 // const fs = require('fs')
 // const os = require('os')
 const notes = require('./notes.js')
+const yargs = require('yargs')
+const argv = yargs.argv
 const _ = require('lodash')
 
 // // 3.9
@@ -19,16 +21,25 @@ const _ = require('lodash')
 
 // 3.13
 // console.log(process.argv)
-let command = process.argv[2]
-let note = process.argv[3]
-console.log('Command:', command)
+
+// 3.14
+// let command = process.argv[2]
+// let note = process.argv[3]
+// // console.log('Command:', command)
+// // console.log('process argv: ', process.argv)
+// // console.log('Yargs', argv)
+
+// 3.15
+
+command = argv._[0]
 
 switch(command){
     case "add":
         console.log("Adding note:", note)
+        notes.addNote(argv.title, argv.body)
         break
     case "list":
-        console.log('Listing notes')
+        notes.getAll()
         break
     default:
         console.log('Command not found')
