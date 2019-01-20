@@ -30,13 +30,18 @@ const _ = require('lodash')
 // // console.log('Yargs', argv)
 
 // 3.15
+// no interesting new info
+
+// 3.16
 
 command = argv._[0]
 
 switch(command){
     case "add":
-        console.log("Adding note:", note)
-        notes.addNote(argv.title, argv.body)
+        notes.addNote(argv.title, argv.body)?
+        console.log('Created note:', argv.title, argv.body) 
+        :
+        console.log('Failed to create a note') 
         break
     case "list":
         notes.getAll()
