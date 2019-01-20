@@ -38,14 +38,18 @@ command = argv._[0]
 
 switch(command){
     case "add":
-        notes.addNote(argv.title, argv.body)?
-        console.log('Created note:', argv.title, argv.body) 
-        :
-        console.log('Failed to create a note') 
+        const note = notes.addNote(argv.title, argv.body)
+    
         break
     case "list":
         notes.getAll()
         break
+    case "find":
+        notes.getNote(argv.title)
+        break
+    case "remove":
+        notes.removeNote(argv.title)
+        break    
     default:
         console.log('Command not found')
         break
